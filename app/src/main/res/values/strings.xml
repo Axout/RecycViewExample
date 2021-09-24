@@ -6,4 +6,7 @@
     <string name="main_activity_complex_list_button_text">Complex list</string>
     <string name="main_activity_complex_list_delegates_button_text">Complex list using delegates</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="simpleTitle">Самый обыкновенный заголовок</string>
+    <string name="numbers">#123456789</string>
+    <string name="author">Автор: Виталий Наливкин</string>
 </resources>
