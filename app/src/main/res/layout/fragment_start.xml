@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/simpleListActivity"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:text="@string/main_activity_simple_list_button_text" />
+
+    <Button
+        android:id="@+id/diffUtilListActivity"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:text="@string/main_activity_diff_util_list_button_text" />
+
+    <Button
+        android:id="@+id/complexListActivity"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:text="@string/main_activity_complex_list_button_text" />
+
+    <Button
+        android:id="@+id/complexListWithDelegates"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:text="@string/main_activity_complex_list_delegates_button_text" />
+
+</LinearLayout>

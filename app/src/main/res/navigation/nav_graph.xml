@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="ru.axout.recycviewexample.StartFragment"
+        android:label="StartFragment"
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/action_startFragment_to_simpleListFragment"
+            app:destination="@id/simpleListFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_diffUtilListFragment"
+            app:destination="@id/diffUtilListFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_complexListFragment"
+            app:destination="@id/complexListFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_delegatesFragment"
+            app:destination="@id/delegatesFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_complexListWithDelegatesFragment"
+            app:destination="@id/complexListWithDelegatesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/complexListFragment"
+        android:name="ru.axout.recycviewexample.ComplexListFragment"
+        android:label="fragment_complex_list"
+        tools:layout="@layout/fragment_complex_list" />
+    <fragment
+        android:id="@+id/delegatesFragment"
+        android:name="ru.axout.recycviewexample.DelegatesFragment"
+        android:label="fragment_delegates"
+        tools:layout="@layout/fragment_delegates" />
+    <fragment
+        android:id="@+id/diffUtilListFragment"
+        android:name="ru.axout.recycviewexample.DiffUtilListFragment"
+        android:label="fragment_diff_util_list"
+        tools:layout="@layout/fragment_diff_util_list" />
+    <fragment
+        android:id="@+id/simpleListFragment"
+        android:name="ru.axout.recycviewexample.SimpleListFragment"
+        android:label="fragment_simple_list"
+        tools:layout="@layout/fragment_simple_list" />
+    <fragment
+        android:id="@+id/complexListWithDelegatesFragment"
+        android:name="ru.axout.recycviewexample.ComplexListWithDelegatesFragment"
+        android:label="fragment_complex_list_with_delegates"
+        tools:layout="@layout/fragment_complex_list_with_delegates" />
+</navigation>

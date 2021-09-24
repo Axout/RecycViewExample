@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">RecycViewExample</string>
+
+    <string name="main_activity_simple_list_button_text">Simple list</string>
+    <string name="main_activity_diff_util_list_button_text">List using diff util</string>
+    <string name="main_activity_complex_list_button_text">Complex list</string>
+    <string name="main_activity_complex_list_delegates_button_text">Complex list using delegates</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
