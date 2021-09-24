@@ -9,4 +9,6 @@
     <string name="simpleTitle">Самый обыкновенный заголовок</string>
     <string name="numbers">#123456789</string>
     <string name="author">Автор: Виталий Наливкин</string>
+    <string name="simpleSubTitle">Самый обыкновенный подзаголовок</string>
+    <string name="email">some-mail@mail.ru</string>
 </resources>

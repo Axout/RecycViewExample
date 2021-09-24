@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/iv_imageComplex"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/no_photo" />
+
+    <TextView
+        android:id="@+id/tv_titleComplex"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:lineSpacingExtra="6sp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_imageComplex"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Очень очень длинное название" />
+
+    <TextView
+        android:id="@+id/tv_subtitleComplex"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:letterSpacing="0.02"
+        android:lineSpacingExtra="2sp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_imageComplex"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titleComplex"
+        tools:text="Еще одно какое-то очень очень длинное название" />
+
+    <TextView
+        android:id="@+id/tv_emailComplex"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:lineSpacingExtra="8sp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_imageComplex"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtitleComplex"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Email: some-mail@mail.ru" />
+
+    <TextView
+        android:id="@+id/tv_uuidComplex"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:lineSpacingExtra="8sp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_imageComplex"
+        app:layout_constraintTop_toBottomOf="@+id/tv_emailComplex"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="ID: #1234567890" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
