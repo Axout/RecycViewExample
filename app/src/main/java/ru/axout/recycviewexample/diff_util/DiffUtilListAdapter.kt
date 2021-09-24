@@ -1,4 +1,4 @@
-package ru.axout.recycviewexample.simple
+package ru.axout.recycviewexample.diff_util
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,40 +9,43 @@ import kotlinx.android.synthetic.main.item_simple.view.*
 import ru.axout.recycviewexample.R
 import ru.axout.recycviewexample.models.SimpleItem
 
-class SimpleListAdapter : RecyclerView.Adapter<SimpleListAdapter.ViewHolder>() {
+class DiffUtilListAdapter : DiffAdapter<SimpleItem, DiffUtilListAdapter.ViewHolder>() {
 
-    private var items = emptyList<SimpleItem>()
+    override fun getDiffCalculator(
+        oldItems: List<SimpleItem>,
+        newItems: List<SimpleItem>
+    ): DiffCalculator<SimpleItem> = object : DiffCalculator<SimpleItem>(oldItems, newItems) {
+        override fun areSame(first: SimpleItem, second: SimpleItem): Boolean {
+            return first.uuid == second.uuid
+        }
+
+        override fun contentsAreSame(first: SimpleItem, second: SimpleItem): Boolean {
+            return first == second
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_simple, parent, false)
-        return ViewHolder(itemView) { item, position ->
-            removeItem(item, position)
+        return ViewHolder(itemView) { item ->
+            removeItem(item)
         }
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(items[position])
+        holder.bind(getItem(position))
     }
 
-    override fun getItemCount() = items.size
-
-    private fun removeItem(item: SimpleItem, position: Int) {
-        val newItems = items.toMutableList().apply {
+    private fun removeItem(item: SimpleItem) {
+        val newItems = getItems().toMutableList().apply {
             remove(item)
         }
-        items = newItems
-        notifyItemRemoved(position)
-    }
-
-    fun setItems(newItems: List<SimpleItem>) {
-        items = newItems.toList()
-        notifyDataSetChanged() // нерационально. Решение -> diff util
+        setItems(newItems)
     }
 
     class ViewHolder(
         override val containerView: View,
-        onItemClick: (item: SimpleItem, position: Int) -> Unit
+        onItemClick: (item: SimpleItem) -> Unit
     ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         private var currentItem: SimpleItem? = null
@@ -50,7 +53,7 @@ class SimpleListAdapter : RecyclerView.Adapter<SimpleListAdapter.ViewHolder>() {
         init {
             containerView.setOnClickListener {
                 currentItem?.let { item ->
-                    onItemClick.invoke(item, adapterPosition)
+                    onItemClick.invoke(item)
                 }
             }
         }
